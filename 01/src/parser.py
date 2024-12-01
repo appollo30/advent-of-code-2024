@@ -18,7 +18,7 @@ def parse(file_name : Optional[str]) -> Optional[Tuple[List[int]]]:
     if not os.path.exists(file_path):
         print(f"File \"{file_name}\" does not exist")
         return None
-    
+
     with open(file_path,"r",encoding="utf-8") as f:
         list1 = []
         list2 = []
