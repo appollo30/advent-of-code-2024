@@ -13,7 +13,7 @@ def parse(file_name : Optional[str]) -> Optional[Tuple[List[int]]]:
     Returns:
         Tuple[List[int]] | None: None, or a tuple of shape (list1,list2) which are integer lists.
     """
-    file_path = f"./{file_name}"
+    file_path = os.path.join(os.getcwd(),"data",file_name)
     if not os.path.exists(file_path):
         print(f"File \"{file_name}\" does not exist")
         return None
