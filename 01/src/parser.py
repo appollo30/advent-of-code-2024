@@ -24,7 +24,7 @@ def parse(file_name : Optional[str]) -> Optional[Tuple[List[int]]]:
             line = f.readline()
             while line:
                 split_text = line.split("   ")
-                list1.append(split_text[0])
-                list2.append(split_text[1])
+                list1.append(int(split_text[0]))
+                list2.append(int(split_text[1]))
                 line = f.readline()
         return list1,list2
