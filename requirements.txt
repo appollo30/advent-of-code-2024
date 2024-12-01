@@ -1,0 +1,2 @@
+#technically none , but I like using pylint
+pylint

@@ -9,13 +9,13 @@ def part_1(list1 : List[int],list2 : List[int]) -> int:
     """
     Solution for part 1 of day 1,
     First we sort both lists in ascending order (or descending order can also work), 
-    then we do a termwise absolute difference, and finally we sum all of those together.
+    then we do a termwise absolute difference, and finally we sum all of those together.  
+    **Worst-case time complexity : O(n*log(n))**
     
-    Worst-case time complexity : O(n*log(n)) 
-    
-    Explanation : The sorting of both lists is O(n*log(n)) 
-    (Timsort https://en.wikipedia.org/wiki/Timsort), and the termwise sum is O(n)
-
+    Explanation:
+        - Sorting both lists takes O(n*log(n)) time (using Timsort
+        https://en.wikipedia.org/wiki/Timsort).
+        - Computing the termwise sum takes O(n) time.
     Args:
         list1 (List[int]): the first list
         list2 (List[int]): the second list
@@ -37,12 +37,12 @@ def part_2(list1 : List[int], list2 : List[int]) -> int:
     First we use a Counter to count the occurences of every element in list2,
     then we loop over list1 to check how many occurences of the elements of list1 in list2.
     And we finally have our result that is the product between each element of list1,
-    and the number of times it appears in list2.
+    and the number of times it appears in list2.  
+    **Worst-case complexity : O(n)**
     
-        Worst-case complexity : O(n)
-    
-        Explanation : The instanciation of the Counter takes O(n) (The size of list2)
-        Then we loop over n, so still O(n).
+    Explanation:
+        - The instanciation of the Counter takes O(n) (The size of list2)
+        - Then we loop over n, so it takes O(n).
 
     Args:
         list1 (List[int]): the first list

@@ -18,14 +18,14 @@ def parse(file_name : Optional[str]) -> Optional[Tuple[List[int]]]:
     if not os.path.exists(file_path):
         print(f"File \"{file_name}\" does not exist")
         return None
-    else:
-        with open(file_path,"r",encoding="utf-8") as f:
-            list1 = []
-            list2 = []
+    
+    with open(file_path,"r",encoding="utf-8") as f:
+        list1 = []
+        list2 = []
+        line = f.readline()
+        while line:
+            split_text = line.split("   ")
+            list1.append(int(split_text[0]))
+            list2.append(int(split_text[1]))
             line = f.readline()
-            while line:
-                split_text = line.split("   ")
-                list1.append(int(split_text[0]))
-                list2.append(int(split_text[1]))
-                line = f.readline()
-        return list1,list2
+    return list1,list2
