@@ -39,11 +39,10 @@ def part_2(list1 : List[int], list2 : List[int]) -> int:
     And we finally have our result that is the product between each element of list1,
     and the number of times it appears in list2.
     
-    Worst-case complexity : O(n)
+        Worst-case complexity : O(n)
     
-    Explanation : The instanciation of the Counter takes O(n)
-    (The size of list2)
-    Then we loop over n, so still O(n).
+        Explanation : The instanciation of the Counter takes O(n) (The size of list2)
+        Then we loop over n, so still O(n).
 
     Args:
         list1 (List[int]): the first list

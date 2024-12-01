@@ -5,13 +5,14 @@ import os
 from typing import List, Tuple, Optional
 
 def parse(file_name : Optional[str]) -> Optional[Tuple[List[int]]]:
-    """Parses the input file
-
+    """
+    Parses the input file
+    
     Args:
-        file_name (str | None): The name of he input file.
+        file_name (Optional[str]): The name of he input file.
 
     Returns:
-        Tuple[List[int]] | None: None, or a tuple of shape (list1,list2) which are integer lists.
+        Optional[Tuple[List[int]]]: None, or a tuple of shape (list1,list2) which are integer lists.
     """
     file_path = os.path.join(os.getcwd(),"data",file_name)
     if not os.path.exists(file_path):
