@@ -14,6 +14,7 @@ def part_1(reports : List[List[int]]) -> int:
     between 1 and 3.
     If any of those conditions is not respected, we break from the loop over the report. Otherwise
     we increase the count by 1.
+    To check for every report, we use the inner function.
     **Worst-case time complexity : O(n)**
     
     Explanation :
@@ -26,19 +27,22 @@ def part_1(reports : List[List[int]]) -> int:
     Returns:
         int: the number of safe reports
     """
-    count = 0 # The number of safe reports
-    for r in reports:
-        m = len(r)
+    def inner(report : List[int]) -> bool:
+        n = len(report)
         diff = 0
-        for j in range(m-1):
-            if diff*(r[j+1]-r[j]) < 0:
-                break
-            diff = r[j+1] - r[j]
+        for i in range(n-1):
+            if diff*(r[i+1]-r[i]) < 0:
+                return False
+            diff = r[i+1] - r[i]
             # If diff > 0 then r is increasing between i and i+1
             # If diff < 0 then r is decreasing between i and i+1
             if abs(diff) < 1 or abs(diff) > 3:
-                break
-        else:
+                return False
+        return True
+
+    count = 0 # The number of safe reports
+    for r in reports:
+        if inner(r):
             count += 1
     return count
     
