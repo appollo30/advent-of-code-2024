@@ -31,7 +31,7 @@ def part_1(reports : List[List[int]]) -> int:
         m = len(r)
         diff = 0
         for j in range(m-1):
-            if (diff > 0 and r[j] > r[j+1]) or (diff < 0 and r[j] < r[j+1]):
+            if diff*(r[j+1]-r[j]) < 0:
                 break
             diff = r[j+1] - r[j]
             # If diff > 0 then r is increasing between i and i+1
@@ -41,3 +41,4 @@ def part_1(reports : List[List[int]]) -> int:
         else:
             count += 1
     return count
+    

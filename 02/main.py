@@ -11,4 +11,4 @@ if __name__ == "__main__":
     if reports is not None:
         result_part_1 = part_1(reports)
         print(f"Number of safe reports : {result_part_1}")
-    
+        
