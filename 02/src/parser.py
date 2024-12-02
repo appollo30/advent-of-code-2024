@@ -25,4 +25,4 @@ def parse(file_name : Optional[str]) -> Optional[List[List[int]]]:
         for l in lines:
             formated_line = [int(elt) for elt in l.split(" ")]
             result.append(formated_line)
-        return result
+    return result
