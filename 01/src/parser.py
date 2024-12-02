@@ -9,7 +9,7 @@ def parse(file_name : Optional[str]) -> Optional[Tuple[List[int]]]:
     Parses the input file
     
     Args:
-        file_name (Optional[str]): The name of he input file.
+        file_name (Optional[str]): The name of the input file.
 
     Returns:
         Optional[Tuple[List[int]]]: None, or a tuple of shape (list1,list2) which are integer lists.
