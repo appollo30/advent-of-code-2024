@@ -2,9 +2,9 @@
 Module to parse the input file, and output a list of strings which represent the memory.
 """
 import os
-from typing import Optional, List
+from typing import Optional
 
-def parse(file_name : Optional[str]) -> List[str]:
+def parse(file_name : Optional[str]) -> str:
     """
     Parses the input file
 
@@ -12,16 +12,13 @@ def parse(file_name : Optional[str]) -> List[str]:
         file_name (Optional[str]): Name of the input file
 
     Returns:
-        List[str]: List of strings representing the memory
+        str: Str representing the memory
     """
     file_path = os.path.join(os.getcwd(),"data",file_name)
     if not os.path.exists(file_path):
         print(f"File \"{file_name}\" does not exist")
         return None
 
-    result = []
     with open(file_path,"r",encoding="utf-8") as f:
-        lines = f.readlines()
-    for l in lines:
-        result.append(l)
-    return result
+        memory = f.read()
+    return memory

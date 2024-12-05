@@ -11,5 +11,5 @@ if __name__ == "__main__":
     if memory is not None:
         result_part_1 = part_1(memory)
         print(f"The result of all instructions for part 1 is : {result_part_1}")
-    #   result_part_2 = part_2(*)
-    #   print(f"**{result_part_2}**"")
+        result_part_2 = part_2(memory)
+        print(f"The result of all instructions for part 2 is : {result_part_2}")
