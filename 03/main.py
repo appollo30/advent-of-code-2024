@@ -1,6 +1,6 @@
 """
-Day ** of the Advent of Code 2024
-https://adventofcode.com/2024/day/**
+Day 03 of the Advent of Code 2024
+https://adventofcode.com/2024/day/03
 """
 from src.parser import parse
 from src.solution import part_1, part_2

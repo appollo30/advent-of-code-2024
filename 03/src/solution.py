@@ -1,6 +1,6 @@
 """
 Solution for day 03 of advent of code 2024
-https://adventofcode.com/2024/day/**
+https://adventofcode.com/2024/day/03
 """
 import re
 
