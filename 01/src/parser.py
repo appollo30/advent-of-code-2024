@@ -23,7 +23,7 @@ def parse(file_name : Optional[str]) -> Optional[Tuple[List[int]]]:
     list2 = []
     with open(file_path,"r",encoding="utf-8") as f:
         lines = f.readlines()
-    
+
     for l in lines:
         split_text = l.split("   ")
         list1.append(int(split_text[0]))

@@ -22,7 +22,7 @@ def parse(file_name : Optional[str]) -> Optional[List[List[int]]]:
     result = []
     with open(file_path,"r",encoding="utf-8") as f:
         lines = f.readlines()
-    
+
     for l in lines:
         formated_line = [int(elt) for elt in l.split(" ")]
         result.append(formated_line)
