@@ -1,4 +1,19 @@
+"""
+Utils module, contains utility functions for the project.
+Contains the following functions:
+- spin_str: spins a string by 90 degrees
+- match_pattern: counts the number of times a pattern appears in a string
+"""
+
 def spin_str(s : str) -> str:
+    """Spins a string by 90 degrees clockwise
+
+    Args:
+        s (str): The string to spin
+
+    Returns:
+        str: The spun string
+    """
     lines = s.splitlines()
     n = len(lines)
     m = len(lines[0])
@@ -10,6 +25,17 @@ def spin_str(s : str) -> str:
     return result.strip()
 
 def match_pattern(s : str,pattern : str) -> int:
+    """Counts the number of times a pattern appears in a string
+    The pattern can contain '*' as a wildcard character
+    The pattern can be multiple lines
+
+    Args:
+        s (str): The string to search in
+        pattern (str): The pattern to search for
+
+    Returns:
+        int: The number of times the pattern appears in the string
+    """
     s_split = s.splitlines()
     pattern_split = pattern.splitlines()
     n = len(s_split)
