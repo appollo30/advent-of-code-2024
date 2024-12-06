@@ -1,27 +1,29 @@
 """
 Solution for day 04 of advent of code 2024
-https://adventofcode.com/2024/day/**
+https://adventofcode.com/2024/day/04
 """
-import re
-from typing import List
-from src.utils import spin_clockwise, diagonals
+from src.utils import spin_str, match_pattern
 
-def search_in_array(arr : List[str]):
-    regex = r"(?<=X)MA(?=S)|(?<=S)AM(?=X)" # This regex searches for matches of XMAS or SAMX.
-    # The reason it is not simply r"XMAS|SAMX" is because if there are overlappings(for instance
-    # XMASAMX), the regex counts only a songle match.
+def part_1(word_search : str) -> int:
+    kernel = "XMAS"
+    kernel_diagonal = """X***
+*M**
+**A*
+***S"""
     count = 0
-    for line in arr:
-        count += len(re.findall(regex,line))
+    for _ in range(4):
+        count += match_pattern(word_search,kernel)
+        count += match_pattern(word_search,kernel_diagonal)
+        kernel = spin_str(kernel)
+        kernel_diagonal = spin_str(kernel_diagonal)
     return count
 
-def part_1(word_search : List[str]):
+def part_2(word_search : str) -> int:
+    kernel = """M*M
+*A*
+S*S"""
     count = 0
-    count += search_in_array(word_search)
-    count += search_in_array(spin_clockwise(word_search))
-    count += search_in_array(diagonals(word_search))
-    count += search_in_array(diagonals(spin_clockwise(word_search)))
+    for _ in range(4):
+        count += match_pattern(word_search,kernel)
+        kernel = spin_str(kernel)
     return count
-
-def part_2():
-    pass
