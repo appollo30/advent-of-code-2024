@@ -5,7 +5,6 @@ https://adventofcode.com/2024/day/05
 from typing import Dict, Set, List
 
 def check_part_1(rules : Dict[int,Set[int]],update : List[int]) -> bool:
-    page_set = set(update)
     n = len(update)
     for i in range(1,n):
         possible_following = rules[update[i]]
@@ -25,5 +24,16 @@ def part_1(rules : Dict[int,Set[int]],updates : List[List[int]]) -> int:
             count += update[n//2]
     return count
 
-def part_2():
-    pass
+def part_2(rules : Dict[int,Set[int]],updates : List[List[int]]) -> int:
+    # I don't know if it is considered cheating or if it is meant to be, but if we trace a graph
+    # for the rules, I noticed that it is fully connected in the demo/example, so this means that
+    # the position in which we should sort the array for every element, is to count the number of
+    # times an element is supposed to be in front of another eleemnt in the rules dictionary.
+    count = 0
+    for update in updates:
+        n = len(update)
+        if not check_part_1(rules,update):
+            update_set = set(update)
+            update.sort(key=lambda x : len(rules[x].intersection(update_set)),reverse = True)
+            count += update[n//2]
+    return count

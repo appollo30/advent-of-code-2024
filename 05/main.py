@@ -11,5 +11,5 @@ if __name__ == "__main__":
     if rules is not None and updates is not None:
         result_part_1 = part_1(rules,updates)
         print(f"Result for part 1 : {result_part_1}")
-    #   result_part_2 = part_2(*)
-    #   print(f"**{result_part_2}**"")
+        result_part_2 = part_2(rules,updates)
+        print(f"Result for part 2 : {result_part_2}")
