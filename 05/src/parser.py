@@ -10,6 +10,17 @@ from collections import defaultdict
 from typing import Optional, Dict, Set, List, Tuple
 
 def format_rules(rules_str : str) -> Dict[int,Set[int]]:
+    """
+    Format the rules string into a dictionnary
+    The dictionnary takes integers as keys and outputs sets of integers
+    The dictionnary represents rules
+
+    Args:
+        rules_str (str): String that represents the rules
+
+    Returns:
+        Dict[int,Set[int]]: Dictionnary that represents the rules
+    """
     rules_dict = defaultdict(set)
     rules_split = rules_str.splitlines()
     for rule in rules_split:
@@ -19,6 +30,16 @@ def format_rules(rules_str : str) -> Dict[int,Set[int]]:
     return rules_dict
 
 def format_updates(updates_str : str) -> List[List[int]]:
+    """
+    Format the updates string into a list of lists
+    The list of lists represents the updates
+    
+    Args:
+        updates_str (str): String that represents the updates
+    
+    Returns:
+        List[List[int]]: List of the updates
+    """
     updates_list = []
     updates_split = updates_str.splitlines()
     for update in updates_split:
@@ -26,6 +47,18 @@ def format_updates(updates_str : str) -> List[List[int]]:
     return updates_list
 
 def parse(file_name : Optional[str]) -> Optional[Tuple[Dict[int,Set[int]],List[List[int]]]]:
+    """
+    Parse the input file and output two formatted outputs :
+    - One dictionnary that takes integers as keys and outputs sets of integers.
+    - One List of integer lists
+
+    Args:
+        file_name (Optional[str]): String that represents the file name
+
+    Returns:
+        Optional[Tuple[Dict[int,Set[int]],List[List[int]]]]: Tuple that contains the rules 
+        dictionnary and the updates list
+    """
     file_path = os.path.join(os.getcwd(),"data",file_name)
     if not os.path.exists(file_path):
         print(f"File \"{file_name}\" does not exist")
