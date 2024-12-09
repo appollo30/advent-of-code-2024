@@ -78,7 +78,7 @@ def part_2(rules : Dict[int,Set[int]],updates : List[List[int]]) -> int:
         updates (List[List[int]]): List of the updates
 
     Returns:
-        int: Sum of the elements that are supposed to be located in the middle of the invalid updates
+        int: Sum of the elements that are supposed to be located in the middle of the invalidupdates
     """
     # I don't know if it is considered cheating or if it is meant to be, but if we trace a graph
     # for the rules, I noticed that it is fully connected in the demo/example, so this means that
